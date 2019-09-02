@@ -4,7 +4,7 @@ Demo project for IP Santo Tomas
 * Maven version 3.6.0
 * Java 8
 
-### To RUN undertow server (runs on port 9000 by default):
+### To RUN undertow server (runs on port 8080 by default):
 
 a)
 BUILD: mvn clean install
