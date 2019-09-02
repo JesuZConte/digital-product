@@ -12,6 +12,9 @@ BUILD: mvn clean install
 b)
 mvn spring-boot:run
 
+c)
+to stop server ctrl+c
+
 ### For health check:
 
 http://localhost:8080/system/actuator/health
