@@ -1,33 +1,15 @@
 CREATE DATABASE  IF NOT EXISTS `product_catalogue`;
 USE `product_catalogue`;
 
+SET FOREIGN_KEY_CHECKS = 0;
+
 --
 -- Table structure for table `product`
 --
 DROP TABLE IF EXISTS `detail`;
-DROP TABLE IF EXISTS `product`;
 
-CREATE TABLE `product` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_url` varchar(100) DEFAULT NULL,
-  `top_level_category_id` varchar(45) DEFAULT NULL,
-  `top_level_category_name` varchar(45) DEFAULT NULL,
-  `price` decimal(5,2) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-
---
--- Data for table `product`
---
-
-INSERT INTO `product` VALUES 
-  (1310,'/shop/product/lenox-federal-platinum-5-piece-place-setting?ID=1310','53630','Fine China', 143.00);
-
-
-
-DROP TABLE IF EXISTS `detail`;
 CREATE TABLE `detail` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   `description` varchar(200) DEFAULT NULL,
   `has_video` tinyint(1) DEFAULT NULL,
@@ -36,15 +18,43 @@ CREATE TABLE `detail` (
   `upc_number` varchar(50) DEFAULT NULL,
   `available` tinyint(1) DEFAULT NULL,
   `availability_message` varchar(50) DEFAULT NULL,
-  UNIQUE KEY `detail_idx_1` (`id`),
-  CONSTRAINT `detail_ibfk_1` FOREIGN KEY (`id`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+INSERT INTO `detail` 
+VALUES 
+('1310','Federal Platinum 5-Piece Place Setting', 'From the Lenox Classic Collection, Federal Platinum formal dinnerware and dishes add a luxurious note to your place settings.', 0, 4.7, 'Lenox', '91709210890', 1, 'In Stock');
+
+
+DROP TABLE IF EXISTS `product`;
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_url` varchar(100) DEFAULT NULL,
+  `top_level_category_id` varchar(45) DEFAULT NULL,
+  `top_level_category_name` varchar(45) DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `product_detail_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_DETAIL_idx` (`product_detail_id`),
+  CONSTRAINT `FK_DETAIL` FOREIGN KEY (`product_detail_id`) REFERENCES `detail` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION 
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+--
+-- Data for table `product`
+--
+
+INSERT INTO `product` VALUES 
+  (1310,'/shop/product/lenox-federal-platinum-5-piece-place-setting?ID=1310','53630','Fine China', 143.00, 1310);
+
+
+
+
 
 --
 -- Dumping data for table `detail`
 --
 
-INSERT INTO `detail` 
-VALUES 
-('1310','Federal Platinum 5-Piece Place Setting', 'From the Lenox Classic Collection, Federal Platinum formal dinnerware and dishes add a luxurious note to your place settings.', 0, 4.7, 'Lenox', '91709210890', 1, 'In Stock');
+
+SET FOREIGN_KEY_CHECKS = 1;
 
