@@ -5,6 +5,8 @@ import com.nisum.stomas.demo.digitalproduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,6 +40,16 @@ public class ProductRestController {
         if (product == null) {
             throw new RuntimeException("Product id not found - " + productId);
         }
+        return product;
+    }
+
+    // add mapping for POST /products - add new product
+    @PostMapping("/products")
+    public Product addProduct(@RequestBody Product product) {
+        product.setId(0);
+
+        productService.save(product);
+
         return product;
     }
 }
