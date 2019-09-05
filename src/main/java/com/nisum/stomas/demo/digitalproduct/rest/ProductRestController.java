@@ -1,7 +1,7 @@
 package com.nisum.stomas.demo.digitalproduct.rest;
 
-import com.nisum.stomas.demo.digitalproduct.dao.ProductDAO;
 import com.nisum.stomas.demo.digitalproduct.entity.Product;
+import com.nisum.stomas.demo.digitalproduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,19 +14,18 @@ import java.util.List;
 public class ProductRestController {
 
 
-    private ProductDAO productDAO;
+    private ProductService productService;
 
-    // quick and dirty: inject product dao (use constructor injection)
     @Autowired
-    public ProductRestController(ProductDAO productDAO) {
-        this.productDAO = productDAO;
+    public ProductRestController(ProductService productService) {
+        this.productService = productService;
     }
 
     // expose "/products" and return list of products
 
     @GetMapping("/products")
     public List<Product> findAll() {
-        return productDAO.findAll();
+        return productService.findAll();
     }
 
 }
