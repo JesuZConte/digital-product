@@ -6,4 +6,8 @@ public interface DetailDAO {
 
     Detail getDetail(int id);
 
+    void save(Detail detail);
+
+    void delete(int id);
+
 }
