@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7ea85b9-7388-4ee4-979a-454fd894da5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,7 +130,7 @@
       <workItem from="1567436889868" duration="70000" />
       <workItem from="1567436975493" duration="2991000" />
       <workItem from="1567440185623" duration="12055000" />
-      <workItem from="1567700926782" duration="566000" />
+      <workItem from="1567700926782" duration="939000" />
     </task>
     <servers />
   </component>
@@ -156,7 +155,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.java</url>
-          <line>29</line>
+          <line>28</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
