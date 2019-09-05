@@ -92,6 +92,13 @@ public class Product {
         this.price = price;
     }
 
+    public Detail getProductDetail() {
+        return productDetail;
+    }
+
+    public void setProductDetail(Detail productDetail) {
+        this.productDetail = productDetail;
+    }
 
     // define toString
 

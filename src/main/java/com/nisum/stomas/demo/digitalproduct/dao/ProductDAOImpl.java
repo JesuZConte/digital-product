@@ -1,5 +1,6 @@
 package com.nisum.stomas.demo.digitalproduct.dao;
 
+import com.nisum.stomas.demo.digitalproduct.entity.Detail;
 import com.nisum.stomas.demo.digitalproduct.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -31,10 +32,9 @@ public class ProductDAOImpl implements ProductDAO {
         // create a query
         Query<Product> theQuery = currentSession.createQuery("from Product", Product.class);
 
+
         // execute query and get result list
         List<Product> products = theQuery.getResultList();
-
-
 
         // return the results
         return products;

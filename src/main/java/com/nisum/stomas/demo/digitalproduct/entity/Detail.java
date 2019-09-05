@@ -1,5 +1,7 @@
 package com.nisum.stomas.demo.digitalproduct.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,6 +44,7 @@ public class Detail {
     @Column(name="availability_message")
     private String availabilityMessage;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "productDetail",
                 cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private Product product;
