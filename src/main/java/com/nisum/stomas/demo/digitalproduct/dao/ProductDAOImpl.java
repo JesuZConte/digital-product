@@ -55,6 +55,8 @@ public class ProductDAOImpl implements ProductDAO {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
 
+        product.getProductDetail().setProduct(product);
+
         // save product
         currentSession.saveOrUpdate(product);
     }
@@ -64,7 +66,6 @@ public class ProductDAOImpl implements ProductDAO {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
 
-        // delete object with primary key
         Query<Product> theQuery = currentSession.createQuery("delete from Product where id=:productId");
         theQuery.setParameter("productId", id);
 

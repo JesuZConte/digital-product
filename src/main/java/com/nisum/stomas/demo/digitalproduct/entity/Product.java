@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +19,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="product_id")
     private int id;
 
     @Column(name="product_url")
@@ -34,7 +35,7 @@ public class Product {
     private double price;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="product_detail_id")
+    @PrimaryKeyJoinColumn
     private Detail productDetail;
 
     // define constructors

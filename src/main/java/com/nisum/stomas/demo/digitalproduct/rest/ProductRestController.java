@@ -3,6 +3,7 @@ package com.nisum.stomas.demo.digitalproduct.rest;
 import com.nisum.stomas.demo.digitalproduct.entity.Product;
 import com.nisum.stomas.demo.digitalproduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,5 +61,19 @@ public class ProductRestController {
         productService.save(product);
 
         return product;
+    }
+
+    // add mapping for DELETE /products/{productId} - delete product
+    @DeleteMapping("/products/{productId}")
+    public String deleteProduct(@PathVariable int productId) {
+        Product tempProduct = productService.findById(productId);
+
+        if (tempProduct == null) {
+            throw new RuntimeException("Product id not found - " + productId);
+        }
+
+        productService.deleteById(productId);
+
+        return "Deleted product id - " + productId;
     }
 }

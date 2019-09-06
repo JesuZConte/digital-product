@@ -1,8 +1,9 @@
 package com.nisum.stomas.demo.digitalproduct.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +17,9 @@ import javax.persistence.Table;
 public class Detail {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id")
+    @GeneratedValue(generator = "foreigngen")
+    @GenericGenerator(strategy = "foreign", name = "foreigngen", parameters = @Parameter(name = "property", value = "product"))
+    @Column(name="product_id")
     private int id;
 
     @Column(name="name")
@@ -45,8 +47,7 @@ public class Detail {
     private String availabilityMessage;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "productDetail",
-                cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToOne(mappedBy = "productDetail")
     private Product product;
 
     public Detail() {
