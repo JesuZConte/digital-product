@@ -35,7 +35,7 @@ public class DetailDAOImpl implements DetailDAO {
     @Override
     public void delete(int id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<Detail> theQuery = currentSession.createQuery("delete from Detail where id=:detailId");
+        Query<Detail> theQuery = currentSession.createQuery("delete from Detail where product_id=:detailId");
         theQuery.setParameter("detailId", id);
         theQuery.executeUpdate();
 

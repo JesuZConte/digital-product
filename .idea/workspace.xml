@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7ea85b9-7388-4ee4-979a-454fd894da5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Detail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/entity/Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/entity/Detail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/DetailDAO.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +130,7 @@
       <workItem from="1567436889868" duration="70000" />
       <workItem from="1567436975493" duration="2991000" />
       <workItem from="1567440185623" duration="12055000" />
-      <workItem from="1567700926782" duration="9217000" />
+      <workItem from="1567700926782" duration="9504000" />
     </task>
     <servers />
   </component>
@@ -159,16 +153,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/DetailDAOImpl.java</url>
           <line>30</line>

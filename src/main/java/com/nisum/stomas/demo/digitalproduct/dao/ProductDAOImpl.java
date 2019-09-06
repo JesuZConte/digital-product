@@ -15,6 +15,9 @@ public class ProductDAOImpl implements ProductDAO {
     // define field for entitymanager
     private EntityManager entityManager;
 
+    @Autowired
+    private DetailDAO detailDao;
+
     // setup constructor for injection
     @Autowired
     public ProductDAOImpl(EntityManager entityManager) {
@@ -67,11 +70,11 @@ public class ProductDAOImpl implements ProductDAO {
         Session currentSession = entityManager.unwrap(Session.class);
 
         // deleting product detail first
+        detailDao.delete(id);
 
-        Query<Product> detailQuery = currentSession.createQuery("delete from Detail where product_id=:productId");
-        detailQuery.setParameter("productId", id);
-
-        detailQuery.executeUpdate();
+//        Query<Product> detailQuery = currentSession.createQuery("delete from Detail where product_id=:productId");
+//        detailQuery.setParameter("productId", id);
+//         detailQuery.executeUpdate();
 
         // deleting product
 
