@@ -66,9 +66,18 @@ public class ProductDAOImpl implements ProductDAO {
         // get the current hibernate session
         Session currentSession = entityManager.unwrap(Session.class);
 
-        Query<Product> theQuery = currentSession.createQuery("delete from Product where id=:productId");
-        theQuery.setParameter("productId", id);
+        // deleting product detail first
 
-        theQuery.executeUpdate();
+        Query<Product> detailQuery = currentSession.createQuery("delete from Detail where product_id=:productId");
+        detailQuery.setParameter("productId", id);
+
+        detailQuery.executeUpdate();
+
+        // deleting product
+
+        Query<Product> productQuery = currentSession.createQuery("delete from Product where product_id=:productId");
+        productQuery.setParameter("productId", id);
+
+        productQuery.executeUpdate();
     }
 }
