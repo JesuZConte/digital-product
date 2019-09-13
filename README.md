@@ -6,7 +6,7 @@ Proyecto Demo para informe de práctica IP Santo Tomas
 
 ### Para acceder a la documentación (javadoc), ir a index.html del proyecto.
 
-### Para EJECUTAR el servidor (puerto 9000)por línea de comando:
+### Para EJECUTAR el servidor (puerto 9000) por línea de comando:
 
 a)
 BUILD -> mvn clean install
