@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7ea85b9-7388-4ee4-979a-454fd894da5e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/DetailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/DetailDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/DetailDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/DetailDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Detail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/entity/Product.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +138,8 @@
       <workItem from="1567436975493" duration="2991000" />
       <workItem from="1567440185623" duration="12055000" />
       <workItem from="1567700926782" duration="10256000" />
+      <workItem from="1567798918909" duration="291000" />
+      <workItem from="1568391162318" duration="6200000" />
     </task>
     <servers />
   </component>

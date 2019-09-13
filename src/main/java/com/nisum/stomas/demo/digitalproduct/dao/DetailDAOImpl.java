@@ -8,17 +8,28 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 
+/**
+ * Implementación de interfaz DetailDAO
+ * @author L. J. Zúñiga
+ * @version 1.0
+ */
 @Repository
 public class DetailDAOImpl implements DetailDAO {
 
     private EntityManager entityManager;
 
+    /**
+     * Constructor que inyecta dependencia de la interfaz EntityManager
+     * @param entityManager permite interactuar con el contexto de persistencia
+     */
     @Autowired
     public DetailDAOImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
-
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public Detail getDetail(int id) {
         Session currentSession = entityManager.unwrap(Session.class);
@@ -26,12 +37,18 @@ public class DetailDAOImpl implements DetailDAO {
         return (Detail) currentSession.get("detail", id);
     }
 
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public void save(Detail detail) {
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.saveOrUpdate(detail);
     }
 
+    /**
+     *{@inheritDoc}
+     */
     @Override
     public void delete(int id) {
         Session currentSession = entityManager.unwrap(Session.class);

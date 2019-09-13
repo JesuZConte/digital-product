@@ -1,0 +1,5 @@
+com.nisum.stomas.demo.digitalproduct
+com.nisum.stomas.demo.digitalproduct.dao
+com.nisum.stomas.demo.digitalproduct.entity
+com.nisum.stomas.demo.digitalproduct.rest
+com.nisum.stomas.demo.digitalproduct.service

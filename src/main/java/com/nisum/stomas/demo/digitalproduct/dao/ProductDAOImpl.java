@@ -9,21 +9,32 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import java.util.List;
 
+/**
+ * Implementación de interfaz ProductDAO
+ * @author L. J. Zúñiga
+ * @version 1.0
+ */
 @Repository
 public class ProductDAOImpl implements ProductDAO {
 
-    // define field for entitymanager
     private EntityManager entityManager;
 
     private DetailDAO detailDao;
 
-    // setup constructor for injection
+    /**
+     * Constructor que inyecta dependencia de la interfaz EntityManager y de DetailDAO
+     * @param entityManager permite interactuar con el contexto de persistencia
+     * @param detailDao acceso para data de detalle de un producto
+     */
     @Autowired
     public ProductDAOImpl(EntityManager entityManager, DetailDAO detailDao) {
         this.entityManager = entityManager;
         this.detailDao = detailDao;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Product> findAll() {
         // get the current hibernate session
@@ -40,6 +51,9 @@ public class ProductDAOImpl implements ProductDAO {
         return products;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Product findById(int id) {
 
@@ -53,6 +67,9 @@ public class ProductDAOImpl implements ProductDAO {
         return product;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void save(Product product) {
         // get the current hibernate session
@@ -64,6 +81,9 @@ public class ProductDAOImpl implements ProductDAO {
         currentSession.saveOrUpdate(product);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void delete(int id) {
         // get the current hibernate session
