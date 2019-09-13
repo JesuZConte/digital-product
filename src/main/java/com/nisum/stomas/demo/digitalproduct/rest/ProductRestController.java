@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controlador Rest para acceder a los servicios de un Producto.
+ * @author L.J. Zúñiga
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api")
 public class ProductRestController {
@@ -21,20 +26,29 @@ public class ProductRestController {
 
     private ProductService productService;
 
+    /**
+     * Constructor que inyecta dependencia de ProductService.
+     * @param productService servicio de un producto.
+     */
     @Autowired
     public ProductRestController(ProductService productService) {
         this.productService = productService;
     }
 
-    // expose "/products" and return list of products
-
+    /**
+     * Obtiene lista de productos.
+     * @return List
+     */
     @GetMapping("/products")
     public List<Product> findAll() {
         return productService.findAll();
     }
 
-    // add mapping for GET /product/{productId}
-
+    /**
+     * Obtiene un Producto por id.
+     * @param productId identificador de un producto.
+     * @return Product
+     */
     @GetMapping("/products/{productId}")
     public Product getProduct(@PathVariable int productId) {
         Product product = productService.findById(productId);
@@ -45,7 +59,11 @@ public class ProductRestController {
         return product;
     }
 
-    // add mapping for POST /products - add new product
+    /**
+     * Agrega un producto.
+     * @param product Producto a agregar.
+     * @return Product
+     */
     @PostMapping("/products")
     public Product addProduct(@RequestBody Product product) {
         product.setId(0);
@@ -55,7 +73,11 @@ public class ProductRestController {
         return product;
     }
 
-    // add mapping for PUT /products - update existing product
+    /**
+     * Modifica un producto.
+     * @param product producto a modificar.
+     * @return Product
+     */
     @PutMapping("/products")
     public Product updateProduct(@RequestBody Product product) {
         productService.save(product);
@@ -63,7 +85,11 @@ public class ProductRestController {
         return product;
     }
 
-    // add mapping for DELETE /products/{productId} - delete product
+    /**
+     * Elimina producto por id.
+     * @param productId identificador del producto a eliminar.
+     * @return String
+     */
     @DeleteMapping("/products/{productId}")
     public String deleteProduct(@PathVariable int productId) {
         Product tempProduct = productService.findById(productId);
