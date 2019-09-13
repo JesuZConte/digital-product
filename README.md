@@ -4,7 +4,7 @@ Proyecto Demo para informe de práctica IP Santo Tomas
 * Maven version 3.6.0
 * Java 8
 
-### Para acceder a la documentación (javadoc), ir a index.html del proyecto.
+### Para acceder a la documentación (javadoc), luego de clonar el proyecto localmente, abrir index.html en el browser (Chrome, Firefox, etc).
 
 ### Para EJECUTAR el servidor (puerto 9000) por línea de comando:
 
