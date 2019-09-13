@@ -1,19 +1,21 @@
 # digital-product
-Demo project for IP Santo Tomas
+Proyecto Demo para informe de práctica IP Santo Tomas
 
 * Maven version 3.6.0
 * Java 8
 
-### To RUN server (runs on port 9000):
+### Para acceder a la documentación (javadoc), luego de clonar el proyecto localmente, abrir index.html en el browser (Chrome, Firefox, etc).
+
+### Para EJECUTAR el servidor (puerto 9000) por línea de comando:
 
 a)
-BUILD: mvn clean install
+BUILD -> mvn clean install
 
 b)
-mvn spring-boot:run
+RUN -> mvn spring-boot:run
 
 c)
-to stop server ctrl+c
+Para detener el servidor -> ctrl+c
 
 ### For health check:
 
