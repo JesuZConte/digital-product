@@ -1,12 +1,11 @@
 package com.nisum.stomas.demo.digitalproduct.analytics;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
+@JsonRootName("meta")
 public class MetaJSON {
 
-    @JsonProperty("analytics")
     private AnalyticsJSON analytics;
-
 
     public AnalyticsJSON getAnalytics() {
         return analytics;

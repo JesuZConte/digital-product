@@ -1,6 +1,7 @@
 package com.nisum.stomas.demo.digitalproduct.rest;
 
 import com.nisum.stomas.demo.digitalproduct.analytics.AnalyticsJSON;
+import com.nisum.stomas.demo.digitalproduct.analytics.MetaJSON;
 import com.nisum.stomas.demo.digitalproduct.entity.Product;
 import com.nisum.stomas.demo.digitalproduct.error.ErrorJSON;
 import com.nisum.stomas.demo.digitalproduct.service.ProductService;
@@ -57,7 +58,7 @@ public class ProductRestController {
     /**
      * Obtiene un Producto por id.
      * @param productId identificador de un producto.
-     * @return Product
+     * @return Response
      */
     @GetMapping("/products/{productId}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -72,11 +73,11 @@ public class ProductRestController {
             return Response.status(HttpStatus.NOT_FOUND.value()).entity(errorJSON).build();
         }
 
-        productToProductJSON.put("Product", product);
+        productToProductJSON.put("product", product);
 
         // Generar objeto Analytics data y agregarlo al objeto response solo para productos individuales
-        AnalyticsJSON analytics = new AnalyticsJSON();
-        productToProductJSON.put("Analytics", analytics);
+        MetaJSON meta = new MetaJSON();
+        productToProductJSON.put("metadataAnalytics", meta);
 
         return Response.ok(productToProductJSON).build() ;
     }

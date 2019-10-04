@@ -1,5 +1,7 @@
 package com.nisum.stomas.demo.digitalproduct.entity;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
