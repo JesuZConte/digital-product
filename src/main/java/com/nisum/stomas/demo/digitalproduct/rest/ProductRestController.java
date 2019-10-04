@@ -1,8 +1,11 @@
 package com.nisum.stomas.demo.digitalproduct.rest;
 
+import com.nisum.stomas.demo.digitalproduct.analytics.AnalyticsJSON;
 import com.nisum.stomas.demo.digitalproduct.entity.Product;
+import com.nisum.stomas.demo.digitalproduct.error.ErrorJSON;
 import com.nisum.stomas.demo.digitalproduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +15,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Controlador Rest para acceder a los servicios de un Producto.
@@ -50,13 +60,25 @@ public class ProductRestController {
      * @return Product
      */
     @GetMapping("/products/{productId}")
-    public Product getProduct(@PathVariable int productId) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProduct(@PathVariable int productId) {
+        final Map<String, Object> productToProductJSON = new HashMap<>();
+
         Product product = productService.findById(productId);
 
         if (product == null) {
-            throw new RuntimeException("Product id not found - " + productId);
+            ErrorJSON errorJSON = new ErrorJSON();
+            errorJSON.setMessage("Product id not found - " + productId);
+            return Response.status(HttpStatus.NOT_FOUND.value()).entity(errorJSON).build();
         }
-        return product;
+
+        productToProductJSON.put("Product", product);
+
+        // Generar objeto Analytics data y agregarlo al objeto response solo para productos individuales
+        AnalyticsJSON analytics = new AnalyticsJSON();
+        productToProductJSON.put("Analytics", analytics);
+
+        return Response.ok(productToProductJSON).build() ;
     }
 
     /**
