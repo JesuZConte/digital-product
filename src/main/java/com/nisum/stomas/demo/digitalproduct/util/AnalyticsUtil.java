@@ -8,9 +8,23 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+/**
+ * Clase utilitaria para construir objeto de Analytics
+ * @author L.J. Zúñiga
+ * @version 1.0
+ */
 @Component
-public class AnalyticsUtil {
+public final class AnalyticsUtil {
 
+    private AnalyticsUtil() {
+
+    }
+
+    /**
+     * Método que crea y construye un AnalyticsJSON
+     * @param product
+     * @return AnalyticsJSON
+     */
     public AnalyticsJSON buildAnalyticsData(Product product) {
         AnalyticsJSON analytics = new AnalyticsJSON();
         analytics.setData(getDataJSON(product));
@@ -53,6 +67,11 @@ public class AnalyticsUtil {
         //Product reviews
         getProductReviews(detail)
                 .ifPresent(reviews -> dataJSON.setProductReviews(new String[]{reviews}));
+
+        //Product availability message
+        getAvailabilityMessage(detail)
+                .ifPresent(message -> dataJSON.setProductAvailabilityMessage(new String[]{message}));
+
 
         return dataJSON;
 
@@ -103,6 +122,12 @@ public class AnalyticsUtil {
     private Optional<String> getProductReviews(Detail detail) {
         return Optional.ofNullable(detail)
                 .map(Detail::getReviewStatistics)
+                .map(Object::toString);
+    }
+
+    private Optional<String> getAvailabilityMessage(Detail detail) {
+        return Optional.ofNullable(detail)
+                .map(Detail::getAvailabilityMessage)
                 .map(Object::toString);
     }
 }

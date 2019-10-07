@@ -1,0 +1,17 @@
+com/nisum/stomas/demo/digitalproduct/service/ProductServiceImpl.class
+com/nisum/stomas/demo/digitalproduct/analytics/MetaJSON.class
+com/nisum/stomas/demo/digitalproduct/entity/Product.class
+com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.class
+com/nisum/stomas/demo/digitalproduct/dao/DetailDAO.class
+com/nisum/stomas/demo/digitalproduct/analytics/AnalyticsJSON.class
+com/nisum/stomas/demo/digitalproduct/dao/ProductDAO.class
+com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.class
+com/nisum/stomas/demo/digitalproduct/Digitalproduct.class
+com/nisum/stomas/demo/digitalproduct/entity/Detail.class
+com/nisum/stomas/demo/digitalproduct/constants/StringConstants.class
+com/nisum/stomas/demo/digitalproduct/util/MetaUtil.class
+com/nisum/stomas/demo/digitalproduct/error/ErrorJSON.class
+com/nisum/stomas/demo/digitalproduct/dao/DetailDAOImpl.class
+com/nisum/stomas/demo/digitalproduct/service/ProductService.class
+com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.class
+com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.class

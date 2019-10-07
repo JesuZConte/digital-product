@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * Controlador Rest para acceder a los servicios de un Producto.
  * @author L.J. Zúñiga
- * @version 1.0
+ * @version 1.1
  */
 @RestController
 @RequestMapping("/api")

@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c7ea85b9-7388-4ee4-979a-454fd894da5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/MetaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/MetaUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +142,7 @@
       <workItem from="1568391162318" duration="7331000" />
       <workItem from="1568404179339" duration="1884000" />
       <workItem from="1568638644016" duration="626000" />
-      <workItem from="1570201891109" duration="8580000" />
+      <workItem from="1570201891109" duration="10728000" />
     </task>
     <servers />
   </component>
