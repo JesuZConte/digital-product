@@ -1,5 +1,9 @@
 com.nisum.stomas.demo.digitalproduct
+com.nisum.stomas.demo.digitalproduct.analytics
+com.nisum.stomas.demo.digitalproduct.constants
 com.nisum.stomas.demo.digitalproduct.dao
 com.nisum.stomas.demo.digitalproduct.entity
+com.nisum.stomas.demo.digitalproduct.error
 com.nisum.stomas.demo.digitalproduct.rest
 com.nisum.stomas.demo.digitalproduct.service
+com.nisum.stomas.demo.digitalproduct.util
