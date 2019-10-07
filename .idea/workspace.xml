@@ -3,12 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="c7ea85b9-7388-4ee4-979a-454fd894da5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/AnalyticsJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/AnalyticsJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/MetaJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/analytics/MetaJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/MetaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nisum/stomas/demo/digitalproduct/util/MetaUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/Digitalproduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/analytics/AnalyticsJSON.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/analytics/MetaJSON.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/constants/StringConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/dao/DetailDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/dao/DetailDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/dao/ProductDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/dao/ProductDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/entity/Detail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/entity/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/error/ErrorJSON.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/rest/ProductRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/service/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nisum/stomas/demo/digitalproduct/util/MetaUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/digitalproduct-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/digitalproduct-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nisum.stomas.demo.digitalproduct.DigitalproductTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nisum.stomas.demo.digitalproduct.DigitalproductTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nisum/stomas/demo/digitalproduct/DigitalproductTests.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +103,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -97,6 +122,9 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/digital-product/digitalproduct/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <configuration name="Digitalproduct" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="digitalproduct" />
@@ -142,7 +170,8 @@
       <workItem from="1568391162318" duration="7331000" />
       <workItem from="1568404179339" duration="1884000" />
       <workItem from="1568638644016" duration="626000" />
-      <workItem from="1570201891109" duration="10728000" />
+      <workItem from="1570201891109" duration="11600000" />
+      <workItem from="1570466705440" duration="668000" />
     </task>
     <servers />
   </component>

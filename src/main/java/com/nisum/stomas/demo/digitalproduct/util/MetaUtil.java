@@ -5,7 +5,7 @@ import com.nisum.stomas.demo.digitalproduct.analytics.MetaJSON;
 import org.springframework.stereotype.Component;
 
 /**
- * Clase que contiene Metadata para Analytics
+ * Clase utilitaria para construir objeto Meta
  */
 @Component
 public final class MetaUtil {
