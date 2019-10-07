@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Clase que contiene Metadata para Analytics
  */
 @Component
-public class MetaUtil {
+public final class MetaUtil {
 
     /**
      * Método que construye la Metadata para Analytics
