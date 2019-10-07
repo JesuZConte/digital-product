@@ -2,9 +2,12 @@ package com.nisum.stomas.demo.digitalproduct.rest;
 
 import com.nisum.stomas.demo.digitalproduct.analytics.AnalyticsJSON;
 import com.nisum.stomas.demo.digitalproduct.analytics.MetaJSON;
+import com.nisum.stomas.demo.digitalproduct.constants.StringConstants;
 import com.nisum.stomas.demo.digitalproduct.entity.Product;
 import com.nisum.stomas.demo.digitalproduct.error.ErrorJSON;
 import com.nisum.stomas.demo.digitalproduct.service.ProductService;
+import com.nisum.stomas.demo.digitalproduct.util.AnalyticsUtil;
+import com.nisum.stomas.demo.digitalproduct.util.MetaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,6 +39,12 @@ public class ProductRestController {
 
 
     private ProductService productService;
+
+    @Autowired
+    private AnalyticsUtil analyticsUtil;
+
+    @Autowired
+    private MetaUtil metaUtil;
 
     /**
      * Constructor que inyecta dependencia de ProductService.
@@ -73,11 +82,14 @@ public class ProductRestController {
             return Response.status(HttpStatus.NOT_FOUND.value()).entity(errorJSON).build();
         }
 
-        productToProductJSON.put("product", product);
+        productToProductJSON.put(StringConstants.PRODUCT_CACHE_BUCKET, product);
 
         // Generar objeto Analytics data y agregarlo al objeto response solo para productos individuales
         MetaJSON meta = new MetaJSON();
-        productToProductJSON.put("metadataAnalytics", meta);
+        AnalyticsJSON analytics = analyticsUtil.buildAnalyticsData(product);
+        meta = metaUtil.buildMetaAnalytics(analytics);
+
+        productToProductJSON.put(StringConstants.META_DATA_ANALYTICS, meta);
 
         return Response.ok(productToProductJSON).build() ;
     }

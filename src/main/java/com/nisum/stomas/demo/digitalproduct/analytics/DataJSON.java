@@ -4,14 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DataJSON {
 
-    @JsonProperty("page_type")
-    private String pageType;
+    @JsonProperty("product_id")
+    private String[] productId;
     @JsonProperty("category_id")
     private String[] categoryId;
     @JsonProperty("category_name")
-    private String[] cateogryName;
-    @JsonProperty("product_id")
-    private String[] productId;
+    private String[] categoryName;
     @JsonProperty("product_upc")
     private String[] productUpc;
     @JsonProperty("product_availability_message")
@@ -25,14 +23,6 @@ public class DataJSON {
     @JsonProperty("product_reviews")
     private String[] productReviews;
 
-    public String getPageType() {
-        return pageType;
-    }
-
-    public void setPageType(String pageType) {
-        this.pageType = pageType;
-    }
-
     public String[] getCategoryId() {
         return categoryId;
     }
@@ -41,12 +31,12 @@ public class DataJSON {
         this.categoryId = categoryId;
     }
 
-    public String[] getCateogryName() {
-        return cateogryName;
+    public String[] getCategoryName() {
+        return categoryName;
     }
 
-    public void setCateogryName(String[] cateogryName) {
-        this.cateogryName = cateogryName;
+    public void setCategoryName(String[] categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String[] getProductId() {
