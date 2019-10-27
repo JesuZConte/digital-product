@@ -16,10 +16,6 @@ import java.util.Optional;
 @Component
 public final class AnalyticsUtil {
 
-    private AnalyticsUtil() {
-
-    }
-
     /**
      * Método que crea y construye un AnalyticsJSON
      * @param product

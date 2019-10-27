@@ -6,7 +6,7 @@ com/nisum/stomas/demo/digitalproduct/dao/DetailDAO.class
 com/nisum/stomas/demo/digitalproduct/analytics/AnalyticsJSON.class
 com/nisum/stomas/demo/digitalproduct/dao/ProductDAO.class
 com/nisum/stomas/demo/digitalproduct/analytics/DataJSON.class
-com/nisum/stomas/demo/digitalproduct/Digitalproduct.class
+com/nisum/stomas/demo/digitalproduct/DigitalProduct.class
 com/nisum/stomas/demo/digitalproduct/entity/Detail.class
 com/nisum/stomas/demo/digitalproduct/constants/StringConstants.class
 com/nisum/stomas/demo/digitalproduct/util/MetaUtil.class

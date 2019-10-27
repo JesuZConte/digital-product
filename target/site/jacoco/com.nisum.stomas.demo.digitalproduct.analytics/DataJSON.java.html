@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DataJSON.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">digitalproduct</a> &gt; <a href="index.source.html" class="el_package">com.nisum.stomas.demo.digitalproduct.analytics</a> &gt; <span class="el_source">DataJSON.java</span></div><h1>DataJSON.java</h1><pre class="source lang-java linenums">package com.nisum.stomas.demo.digitalproduct.analytics;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * Representa la Data de un JSON
+ * @author L.J. Zúñiga
+ * @version 1.0
+ */
+<span class="fc" id="L10">public class DataJSON {</span>
+
+    @JsonProperty(&quot;product_id&quot;)
+    private String[] productId;
+    @JsonProperty(&quot;category_id&quot;)
+    private String[] categoryId;
+    @JsonProperty(&quot;category_name&quot;)
+    private String[] categoryName;
+    @JsonProperty(&quot;product_upc&quot;)
+    private String[] productUpc;
+    @JsonProperty(&quot;product_availability_message&quot;)
+    private String[] productAvailabilityMessage;
+    @JsonProperty(&quot;product_name&quot;)
+    private String[] productName;
+    @JsonProperty(&quot;product_price&quot;)
+    private String[] productPrice;
+    @JsonProperty(&quot;product_video&quot;)
+    private String[] productVideo;
+    @JsonProperty(&quot;product_reviews&quot;)
+    private String[] productReviews;
+
+    /**
+     * Obtiene el Id de la categoría del producto
+     * @return String[]
+     */
+    public String[] getCategoryId() {
+<span class="fc" id="L36">        return categoryId;</span>
+    }
+
+    /**
+     * Modifica el Id de la categoría del producto
+     * @param categoryId
+     */
+    public void setCategoryId(String[] categoryId) {
+<span class="fc" id="L44">        this.categoryId = categoryId;</span>
+<span class="fc" id="L45">    }</span>
+
+    /**
+     * Obtiene el nombre de la categoría del producto
+     * @return String[]
+     */
+    public String[] getCategoryName() {
+<span class="fc" id="L52">        return categoryName;</span>
+    }
+
+    /**
+     * Modifica el nombre de la categoría del producto
+     * @param categoryName
+     */
+    public void setCategoryName(String[] categoryName) {
+<span class="fc" id="L60">        this.categoryName = categoryName;</span>
+<span class="fc" id="L61">    }</span>
+
+    /**
+     * Obtiene el id del producto
+     * @return String[]
+     */
+    public String[] getProductId() {
+<span class="fc" id="L68">        return productId;</span>
+    }
+
+    /**
+     * Modifica el id del producto
+     * @param productId
+     */
+    public void setProductId(String[] productId) {
+<span class="fc" id="L76">        this.productId = productId;</span>
+<span class="fc" id="L77">    }</span>
+
+    /**
+     * Obtiene el número upc del producto
+     * @return String[]
+     */
+    public String[] getProductUpc() {
+<span class="fc" id="L84">        return productUpc;</span>
+    }
+
+    /**
+     * Modifica el número upc del producto
+     * @param productUpc
+     */
+    public void setProductUpc(String[] productUpc) {
+<span class="fc" id="L92">        this.productUpc = productUpc;</span>
+<span class="fc" id="L93">    }</span>
+
+    /**
+     * Obtiene el mensaje de disponibilidad del producto
+     * @return String[]
+     */
+    public String[] getProductAvailabilityMessage() {
+<span class="fc" id="L100">        return productAvailabilityMessage;</span>
+    }
+
+    /**
+     * Modifica el mensaje de disponibilidad del producto
+     * @param productAvailabilityMessage
+     */
+    public void setProductAvailabilityMessage(String[] productAvailabilityMessage) {
+<span class="fc" id="L108">        this.productAvailabilityMessage = productAvailabilityMessage;</span>
+<span class="fc" id="L109">    }</span>
+
+    /**
+     * Obtiene el nombre del producto
+     * @return String[]
+     */
+    public String[] getProductName() {
+<span class="fc" id="L116">        return productName;</span>
+    }
+
+    /**
+     * Modifica el nombre del producto
+     * @param productName
+     */
+    public void setProductName(String[] productName) {
+<span class="fc" id="L124">        this.productName = productName;</span>
+<span class="fc" id="L125">    }</span>
+
+    /**
+     * Obtiene el precio del producto
+     * @return String[]
+     */
+    public String[] getProductPrice() {
+<span class="fc" id="L132">        return productPrice;</span>
+    }
+
+    /**
+     * Modifica el precio del producto
+     * @param productPrice
+     */
+    public void setProductPrice(String[] productPrice) {
+<span class="fc" id="L140">        this.productPrice = productPrice;</span>
+<span class="fc" id="L141">    }</span>
+
+    /**
+     * Indica si el producto tiene video
+     * @return String[]
+     */
+    public String[] getProductVideo() {
+<span class="fc" id="L148">        return productVideo;</span>
+    }
+
+    /**
+     * Modifica si el producto tiene video
+     * @param productVideo
+     */
+    public void setProductVideo(String[] productVideo) {
+<span class="fc" id="L156">        this.productVideo = productVideo;</span>
+<span class="fc" id="L157">    }</span>
+
+    /**
+     * Obtiene los reviews (votaciones) del producto
+     * @return String[]
+     */
+    public String[] getProductReviews() {
+<span class="fc" id="L164">        return productReviews;</span>
+    }
+
+    /**
+     * Modifica los reviews del producto
+     * @param productReviews
+     */
+    public void setProductReviews(String[] productReviews) {
+<span class="fc" id="L172">        this.productReviews = productReviews;</span>
+<span class="fc" id="L173">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

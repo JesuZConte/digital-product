@@ -1,1 +1,4 @@
-com/nisum/stomas/demo/digitalproduct/DigitalproductTests.class
+com/nisum/stomas/demo/digitalproduct/util/MetaUtilTest.class
+com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtilTest.class
+com/nisum/stomas/demo/digitalproduct/service/ProductServiceImplTest.class
+com/nisum/stomas/demo/digitalproduct/rest/ProductRestControllerTest.class

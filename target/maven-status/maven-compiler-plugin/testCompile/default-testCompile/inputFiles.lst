@@ -1,1 +1,4 @@
-/Users/nisum/Desktop/Proyectos/digital-product/src/test/java/com/nisum/stomas/demo/digitalproduct/DigitalproductTests.java
+/Users/nisum/Proyectos/digital-product/src/test/java/com/nisum/stomas/demo/digitalproduct/service/ProductServiceImplTest.java
+/Users/nisum/Proyectos/digital-product/src/test/java/com/nisum/stomas/demo/digitalproduct/util/MetaUtilTest.java
+/Users/nisum/Proyectos/digital-product/src/test/java/com/nisum/stomas/demo/digitalproduct/rest/ProductRestControllerTest.java
+/Users/nisum/Proyectos/digital-product/src/test/java/com/nisum/stomas/demo/digitalproduct/util/AnalyticsUtilTest.java

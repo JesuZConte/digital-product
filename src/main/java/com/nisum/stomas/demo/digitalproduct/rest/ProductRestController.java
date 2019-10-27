@@ -85,9 +85,8 @@ public class ProductRestController {
         productToProductJSON.put(StringConstants.PRODUCT_CACHE_BUCKET, product);
 
         // Generar objeto Analytics data y agregarlo al objeto response solo para productos individuales
-        MetaJSON meta = new MetaJSON();
         AnalyticsJSON analytics = analyticsUtil.buildAnalyticsData(product);
-        meta = metaUtil.buildMetaAnalytics(analytics);
+        MetaJSON meta = metaUtil.buildMetaAnalytics(analytics);
 
         productToProductJSON.put(StringConstants.META_DATA_ANALYTICS, meta);
 

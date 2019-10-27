@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Detail.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">digitalproduct</a> &gt; <a href="index.source.html" class="el_package">com.nisum.stomas.demo.digitalproduct.entity</a> &gt; <span class="el_source">Detail.java</span></div><h1>Detail.java</h1><pre class="source lang-java linenums">package com.nisum.stomas.demo.digitalproduct.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+/**
+ * Representa el Detalle de un Producto.
+ * @author L.J. Zúñiga
+ * @version 1.0
+ */
+@Entity
+@Table(name=&quot;detail&quot;)
+public class Detail {
+
+    @Id
+    @GeneratedValue(generator = &quot;foreigngen&quot;)
+    @GenericGenerator(strategy = &quot;foreign&quot;, name = &quot;foreigngen&quot;, parameters = @Parameter(name = &quot;property&quot;, value = &quot;product&quot;))
+    @Column(name=&quot;product_id&quot;)
+    private int id;
+
+    @Column(name=&quot;name&quot;)
+    private String name;
+
+    @Column(name=&quot;description&quot;)
+    private String description;
+
+    @Column(name=&quot;has_video&quot;)
+    private boolean hasVideo;
+
+    @Column(name=&quot;review_statistics&quot;)
+    private double reviewStatistics;
+
+    @Column(name=&quot;brand&quot;)
+    private String brand;
+
+    @Column(name=&quot;upc_number&quot;)
+    private String upcNumber;
+
+    @Column(name=&quot;available&quot;)
+    private boolean available;
+
+    @Column(name=&quot;availability_message&quot;)
+    private String availabilityMessage;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = &quot;productDetail&quot;)
+    private Product product;
+
+    /**
+     * Constructor sin parámetros, crea una instancia de Detail (detalle).
+     */
+<span class="fc" id="L60">    public Detail() {</span>
+<span class="fc" id="L61">    }</span>
+
+    /**
+     * Constructor con parámetros, crea una instancia de Detail (detalle).
+     * @param name nombre del producto.
+     * @param description descripción del producto.
+     * @param hasVideo si producto cuenta con video.
+     * @param reviewStatistics promedio de estadísticas de un producto.
+     * @param brand marca del producto.
+     * @param upcNumber número de UPC del producto.
+     * @param available si está disponible el producto.
+     * @param availabilityMessage mensaje de disponibilidad del producto.
+     */
+<span class="nc" id="L74">    public Detail(String name, String description, boolean hasVideo, double reviewStatistics, String brand, String upcNumber, boolean available, String availabilityMessage) {</span>
+<span class="nc" id="L75">        this.name = name;</span>
+<span class="nc" id="L76">        this.description = description;</span>
+<span class="nc" id="L77">        this.hasVideo = hasVideo;</span>
+<span class="nc" id="L78">        this.reviewStatistics = reviewStatistics;</span>
+<span class="nc" id="L79">        this.brand = brand;</span>
+<span class="nc" id="L80">        this.upcNumber = upcNumber;</span>
+<span class="nc" id="L81">        this.available = available;</span>
+<span class="nc" id="L82">        this.availabilityMessage = availabilityMessage;</span>
+<span class="nc" id="L83">    }</span>
+
+    /**
+     * Obtiene id del detalle.
+     * @return int
+     */
+    public int getId() {
+<span class="nc" id="L90">        return id;</span>
+    }
+
+    /**
+     * Modifica id del detalle.
+     * @param id identificador del detalle.
+     */
+    public void setId(int id) {
+<span class="nc" id="L98">        this.id = id;</span>
+<span class="nc" id="L99">    }</span>
+
+    /**
+     * Obtiene nombre del detalle.
+     * @return String
+     */
+    public String getName() {
+<span class="fc" id="L106">        return name;</span>
+    }
+
+    /**
+     * Modifica nombre del detalle.
+     * @param name nombre del detalle.
+     */
+    public void setName(String name) {
+<span class="fc" id="L114">        this.name = name;</span>
+<span class="fc" id="L115">    }</span>
+
+    /**
+     * Obtiene descripción del detalle.
+     * @return String
+     */
+    public String getDescription() {
+<span class="nc" id="L122">        return description;</span>
+    }
+
+    /**
+     * Modifica descripción del detalle.
+     * @param description descripción del detalle.
+     */
+    public void setDescription(String description) {
+<span class="fc" id="L130">        this.description = description;</span>
+<span class="fc" id="L131">    }</span>
+
+    /**
+     * Confirma si producto tiene video.
+     * @return boolean
+     */
+    public boolean hasVideo() {
+<span class="fc" id="L138">        return hasVideo;</span>
+    }
+
+    /**
+     * Modifica si producto tiene video.
+     * @param hasVideo si producto tiene video, método retorna true. Si no cuenta con video, retorna false.
+     */
+    public void setHasVideo(boolean hasVideo) {
+<span class="fc" id="L146">        this.hasVideo = hasVideo;</span>
+<span class="fc" id="L147">    }</span>
+
+    /**
+     * Obtiene el promedio de las estadísticas de un producto.
+     * @return double
+     */
+    public double getReviewStatistics() {
+<span class="fc" id="L154">        return reviewStatistics;</span>
+    }
+
+    /**
+     * Modifica el valor promedio de las estadísticas de un producto.
+     * @param reviewStatistics nota promedio de las estadísticas de un producto.
+     */
+    public void setReviewStatistics(double reviewStatistics) {
+<span class="fc" id="L162">        this.reviewStatistics = reviewStatistics;</span>
+<span class="fc" id="L163">    }</span>
+
+    /**
+     * Obtiene marca de un producto.
+     * @return String
+     */
+    public String getBrand() {
+<span class="nc" id="L170">        return brand;</span>
+    }
+
+    /**
+     * Modifica la marca de un producto.
+     * @param brand marca de un producto.
+     */
+    public void setBrand(String brand) {
+<span class="fc" id="L178">        this.brand = brand;</span>
+<span class="fc" id="L179">    }</span>
+
+    /**
+     * Obtiene el número upc de un producto.
+     * @return String
+     */
+    public String getUpcNumber() {
+<span class="fc" id="L186">        return upcNumber;</span>
+    }
+
+    /**
+     * Modifica el número upc.
+     * @param upcNumber Universal Product Code es un barcode para escaneo de items. Está conformado por 12 dígitos.
+     */
+    public void setUpcNumber(String upcNumber) {
+<span class="fc" id="L194">        this.upcNumber = upcNumber;</span>
+<span class="fc" id="L195">    }</span>
+
+    /**
+     * Si el producto está disponible.
+     * @return boolean
+     */
+    public boolean isAvailable() {
+<span class="nc" id="L202">        return available;</span>
+    }
+
+    /**
+     * Modifica la disponibilidad de un producto.
+     * @param available Si el producto está disponible, retorna true. De lo contrario, retorna false.
+     */
+    public void setAvailable(boolean available) {
+<span class="fc" id="L210">        this.available = available;</span>
+<span class="fc" id="L211">    }</span>
+
+    /**
+     * Obtiene el mensaje de disponibilidad de un producto.
+     * @return String
+     */
+    public String getAvailabilityMessage() {
+<span class="fc" id="L218">        return availabilityMessage;</span>
+    }
+
+    /**
+     * Modifica el mensaje de disponibilidad de un producto.
+     * @param availabilityMessage mensaje de disponibilidad de un producto.
+     */
+    public void setAvailabilityMessage(String availabilityMessage) {
+<span class="fc" id="L226">        this.availabilityMessage = availabilityMessage;</span>
+<span class="fc" id="L227">    }</span>
+
+    /**
+     * Obtiene el producto asociado al detalle.
+     * @return Product
+     */
+    public Product getProduct() {
+<span class="nc" id="L234">        return product;</span>
+    }
+
+    /**
+     * Modifica el producto asociado al detalle.
+     * @param product Producto
+     */
+    public void setProduct(Product product) {
+<span class="fc" id="L242">        this.product = product;</span>
+<span class="fc" id="L243">    }</span>
+
+    /**
+     * La representación en String del objeto Detail (detalle).
+     * @return String
+     */
+    @Override
+    public String toString() {
+<span class="nc" id="L251">        return &quot;Detail{&quot; +</span>
+                &quot;id=&quot; + id +
+                &quot;, name='&quot; + name + '\'' +
+                &quot;, description='&quot; + description + '\'' +
+                &quot;, hasVideo=&quot; + hasVideo +
+                &quot;, reviewStatistics=&quot; + reviewStatistics +
+                &quot;, brand='&quot; + brand + '\'' +
+                &quot;, upcNumber='&quot; + upcNumber + '\'' +
+                &quot;, available=&quot; + available +
+                &quot;, availabilityMessage='&quot; + availabilityMessage + '\'' +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

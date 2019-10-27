@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">digitalproduct</a> &gt; <a href="index.source.html" class="el_package">com.nisum.stomas.demo.digitalproduct.service</a> &gt; <span class="el_source">ProductServiceImpl.java</span></div><h1>ProductServiceImpl.java</h1><pre class="source lang-java linenums">package com.nisum.stomas.demo.digitalproduct.service;
+
+import com.nisum.stomas.demo.digitalproduct.dao.ProductDAO;
+import com.nisum.stomas.demo.digitalproduct.entity.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+/**
+ * Implementación de la interfaz ProductService
+ * @author L.J. Zúñiga
+ * @version 1.0
+ */
+@Service
+public class ProductServiceImpl implements ProductService{
+
+    private ProductDAO productDAO;
+
+    /**
+     * Constructor que inyecta dependencia de ProductDAO.
+     * @param productDAO objeto que permite el acceso a la persistencia de producto.
+     */
+    @Autowired
+<span class="fc" id="L26">    public ProductServiceImpl(ProductDAO productDAO) {</span>
+<span class="fc" id="L27">        this.productDAO = productDAO;</span>
+<span class="fc" id="L28">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @Transactional
+    public List&lt;Product&gt; findAll() {
+<span class="fc" id="L36">        return productDAO.findAll();</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @Transactional
+    public Product findById(int id) {
+<span class="fc" id="L45">        return productDAO.findById(id);</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @Transactional
+    public void save(Product product) {
+<span class="fc" id="L54">        productDAO.save(product);</span>
+<span class="fc" id="L55">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @Transactional
+    public void deleteById(int id) {
+<span class="fc" id="L63">        productDAO.delete(id);</span>
+<span class="fc" id="L64">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

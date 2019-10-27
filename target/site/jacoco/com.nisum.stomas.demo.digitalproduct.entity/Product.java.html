@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Product.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">digitalproduct</a> &gt; <a href="index.source.html" class="el_package">com.nisum.stomas.demo.digitalproduct.entity</a> &gt; <span class="el_source">Product.java</span></div><h1>Product.java</h1><pre class="source lang-java linenums">package com.nisum.stomas.demo.digitalproduct.entity;
+
+import com.fasterxml.jackson.annotation.JsonRootName;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+/**
+ * Representa un Producto.
+ * @author L.J Zúñiga
+ * @version 1.0
+ */
+@Entity
+@Table(name=&quot;product&quot;)
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name=&quot;product_id&quot;)
+    private int id;
+
+    @Column(name=&quot;product_url&quot;)
+    private String productUrl;
+
+    @Column(name=&quot;top_level_category_id&quot;)
+    private String topLevelCategoryId;
+
+    @Column(name=&quot;top_level_category_name&quot;)
+    private String topLevelCategoryName;
+
+    @Column(name=&quot;price&quot;)
+    private double price;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Detail productDetail;
+
+
+    /**
+     * Constructor sin parámetros, crea una instancia de Product (producto).
+     */
+<span class="fc" id="L49">    public Product() {</span>
+<span class="fc" id="L50">    }</span>
+
+    /**
+     * Constructor con parámetros, crea una instancia de Product (producto).
+     * @param productUrl dirección url del producto.
+     * @param topLevelCategoryId identificador de la categoría de alto nivel del producto.
+     * @param topLevelCategoryName nombre de la categoría de alto nivel del producto.
+     * @param price precio del producto
+     */
+<span class="nc" id="L59">    public Product(String productUrl, String topLevelCategoryId, String topLevelCategoryName, double price) {</span>
+<span class="nc" id="L60">        this.productUrl = productUrl;</span>
+<span class="nc" id="L61">        this.topLevelCategoryId = topLevelCategoryId;</span>
+<span class="nc" id="L62">        this.topLevelCategoryName = topLevelCategoryName;</span>
+<span class="nc" id="L63">        this.price = price;</span>
+<span class="nc" id="L64">    }</span>
+
+
+    /**
+     * Obtiene id del producto.
+     * @return id
+     */
+    public int getId() {
+<span class="fc" id="L72">        return id;</span>
+    }
+
+    /**
+     * Modifica id del producto.
+     * @param id identificador del producto.
+     */
+    public void setId(int id) {
+<span class="fc" id="L80">        this.id = id;</span>
+<span class="fc" id="L81">    }</span>
+
+    /**
+     * Dirección url del producto.
+     * @return String
+     */
+    public String getProductUrl() {
+<span class="nc" id="L88">        return productUrl;</span>
+    }
+
+    /**
+     * Modifica la dirección url del producto.
+     * @param productUrl dirección url de un producto
+     */
+    public void setProductUrl(String productUrl) {
+<span class="fc" id="L96">        this.productUrl = productUrl;</span>
+<span class="fc" id="L97">    }</span>
+
+    /**
+     * Obtiene el id de la categoría de alto nivel del producto.
+     * @return id
+     */
+    public String getTopLevelCategoryId() {
+<span class="fc" id="L104">        return topLevelCategoryId;</span>
+    }
+
+    /**
+     * Modifica el id de la categoría de alto nivel del producto.
+     * @param topLevelCategoryId identificador de la categoría de alto nivel.
+     */
+    public void setTopLevelCategoryId(String topLevelCategoryId) {
+<span class="fc" id="L112">        this.topLevelCategoryId = topLevelCategoryId;</span>
+<span class="fc" id="L113">    }</span>
+
+    /**
+     * Obtiene el nombre de la categoría de alto nivel del producto.
+     * @return String
+     */
+    public String getTopLevelCategoryName() {
+<span class="fc" id="L120">        return topLevelCategoryName;</span>
+    }
+
+    /**
+     * Modifica el nombre de la categoría de alto nivel del producto.
+     * @param topLevelCategoryName nombre de la categoría de alto nivel.
+     */
+    public void setTopLevelCategoryName(String topLevelCategoryName) {
+<span class="fc" id="L128">        this.topLevelCategoryName = topLevelCategoryName;</span>
+<span class="fc" id="L129">    }</span>
+
+    /**
+     * Obtiene el precio de un producto.
+     * @return double
+     */
+    public double getPrice() {
+<span class="fc" id="L136">        return price;</span>
+    }
+
+    /**
+     * Modifica el precio de un producto.
+     * @param price precio de un producto en dólares.
+     */
+    public void setPrice(double price) {
+<span class="fc" id="L144">        this.price = price;</span>
+<span class="fc" id="L145">    }</span>
+
+    /**
+     * Obtiene el detalle de un producto.
+     * @return Detail
+     */
+    public Detail getProductDetail() {
+<span class="fc" id="L152">        return productDetail;</span>
+    }
+
+    /**
+     * Detalle de un producto.
+     * @param productDetail detalle.
+     */
+    public void setProductDetail(Detail productDetail) {
+<span class="fc" id="L160">        this.productDetail = productDetail;</span>
+<span class="fc" id="L161">    }</span>
+
+    /**
+     * La representación en String del objeto Product (producto).
+     * @return String
+     */
+    @Override
+    public String toString() {
+<span class="nc" id="L169">        return &quot;Product{&quot; +</span>
+                &quot;id=&quot; + id +
+                &quot;, productUrl='&quot; + productUrl + '\'' +
+                &quot;, topLevelCategoryId='&quot; + topLevelCategoryId + '\'' +
+                &quot;, topLevelCategoryName='&quot; + topLevelCategoryName + '\'' +
+                &quot;, price=&quot; + price +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

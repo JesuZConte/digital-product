@@ -7,14 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Clase Principal de la aplicación Digital Product.
  */
 @SpringBootApplication
-public class Digitalproduct {
+public class DigitalProduct {
 
 	/**
 	 * Main entry point for the launcher. (descripción original de docs.oracle.com)
 	 * @param args argumentos.
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(Digitalproduct.class, args);
+		SpringApplication.run(DigitalProduct.class, args);
 	}
 
 }

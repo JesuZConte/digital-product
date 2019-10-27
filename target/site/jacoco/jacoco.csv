@@ -1,0 +1,15 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+digitalproduct,com.nisum.stomas.demo.digitalproduct.constants,StringConstants,3,0,0,0,1,0,1,0,1,0
+digitalproduct,com.nisum.stomas.demo.digitalproduct.rest,ProductRestController,0,113,0,4,0,25,0,8,0,6
+digitalproduct,com.nisum.stomas.demo.digitalproduct,DigitalProduct,8,0,0,0,3,0,2,0,2,0
+digitalproduct,com.nisum.stomas.demo.digitalproduct.error,ErrorJSON,3,7,0,0,1,3,1,2,1,2
+digitalproduct,com.nisum.stomas.demo.digitalproduct.service,ProductServiceImpl,0,25,0,0,0,9,0,5,0,5
+digitalproduct,com.nisum.stomas.demo.digitalproduct.dao,DetailDAOImpl,49,0,0,0,13,0,4,0,4,0
+digitalproduct,com.nisum.stomas.demo.digitalproduct.dao,ProductDAOImpl,78,0,0,0,21,0,5,0,5,0
+digitalproduct,com.nisum.stomas.demo.digitalproduct.util,MetaUtil,0,12,0,0,0,4,0,2,0,2
+digitalproduct,com.nisum.stomas.demo.digitalproduct.util,AnalyticsUtil,0,221,0,0,0,52,0,21,0,21
+digitalproduct,com.nisum.stomas.demo.digitalproduct.entity,Detail,108,54,0,0,18,25,8,15,8,15
+digitalproduct,com.nisum.stomas.demo.digitalproduct.entity,Product,56,42,0,0,8,19,3,12,3,12
+digitalproduct,com.nisum.stomas.demo.digitalproduct.analytics,AnalyticsJSON,0,10,0,0,0,4,0,3,0,3
+digitalproduct,com.nisum.stomas.demo.digitalproduct.analytics,DataJSON,0,66,0,0,0,28,0,19,0,19
+digitalproduct,com.nisum.stomas.demo.digitalproduct.analytics,MetaJSON,3,7,0,0,1,3,1,2,1,2

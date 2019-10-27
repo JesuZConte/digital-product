@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnalyticsUtil.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">digitalproduct</a> &gt; <a href="index.source.html" class="el_package">com.nisum.stomas.demo.digitalproduct.util</a> &gt; <span class="el_source">AnalyticsUtil.java</span></div><h1>AnalyticsUtil.java</h1><pre class="source lang-java linenums">package com.nisum.stomas.demo.digitalproduct.util;
+
+import com.nisum.stomas.demo.digitalproduct.analytics.AnalyticsJSON;
+import com.nisum.stomas.demo.digitalproduct.analytics.DataJSON;
+import com.nisum.stomas.demo.digitalproduct.entity.Detail;
+import com.nisum.stomas.demo.digitalproduct.entity.Product;
+import org.springframework.stereotype.Component;
+
+import java.util.Optional;
+
+/**
+ * Clase utilitaria para construir objeto de Analytics
+ * @author L.J. Zúñiga
+ * @version 1.0
+ */
+@Component
+<span class="fc" id="L17">public final class AnalyticsUtil {</span>
+
+    /**
+     * Método que crea y construye un AnalyticsJSON
+     * @param product
+     * @return AnalyticsJSON
+     */
+    public AnalyticsJSON buildAnalyticsData(Product product) {
+<span class="fc" id="L25">        AnalyticsJSON analytics = new AnalyticsJSON();</span>
+<span class="fc" id="L26">        analytics.setData(getDataJSON(product));</span>
+<span class="fc" id="L27">        return analytics;</span>
+    }
+
+    private DataJSON getDataJSON(Product product) {
+<span class="fc" id="L31">        DataJSON dataJSON = new DataJSON();</span>
+<span class="fc" id="L32">        Detail detail = product.getProductDetail();</span>
+
+
+        //Product Id
+<span class="fc" id="L36">        getProductId(product)</span>
+<span class="fc" id="L37">                .ifPresent(id -&gt; dataJSON.setProductId(new String[]{id}));</span>
+
+        //Product Name
+<span class="fc" id="L40">        getProductName(detail)</span>
+<span class="fc" id="L41">                .ifPresent(productName -&gt; dataJSON.setProductName(new String[]{productName}));</span>
+
+        //Product category Id
+<span class="fc" id="L44">        getProductCategoryId(product)</span>
+<span class="fc" id="L45">                .ifPresent(topLevelCategoryId -&gt; dataJSON.setCategoryId(new String[]{topLevelCategoryId}));</span>
+
+        //Product category name
+<span class="fc" id="L48">        getProductCategoryName(product)</span>
+<span class="fc" id="L49">                .ifPresent(productCategoryName -&gt; dataJSON.setCategoryName(new String[]{productCategoryName}));</span>
+
+        //Product price
+<span class="fc" id="L52">        getProductPrice(product)</span>
+<span class="fc" id="L53">                .ifPresent(price -&gt; dataJSON.setProductPrice(new String[]{price}));</span>
+
+        //Upc number
+<span class="fc" id="L56">        getUpcNumber(detail)</span>
+<span class="fc" id="L57">                .ifPresent(upc -&gt; dataJSON.setProductUpc(new String[]{upc}));</span>
+
+        //Product video
+<span class="fc" id="L60">        getProductVideo(detail)</span>
+<span class="fc" id="L61">                .ifPresent(hasVideo -&gt; dataJSON.setProductVideo(new String[]{hasVideo}));</span>
+
+        //Product reviews
+<span class="fc" id="L64">        getProductReviews(detail)</span>
+<span class="fc" id="L65">                .ifPresent(reviews -&gt; dataJSON.setProductReviews(new String[]{reviews}));</span>
+
+        //Product availability message
+<span class="fc" id="L68">        getAvailabilityMessage(detail)</span>
+<span class="fc" id="L69">                .ifPresent(message -&gt; dataJSON.setProductAvailabilityMessage(new String[]{message}));</span>
+
+
+<span class="fc" id="L72">        return dataJSON;</span>
+
+    }
+
+    private Optional&lt;String&gt; getProductId(Product product) {
+<span class="fc" id="L77">        return Optional.ofNullable(product)</span>
+<span class="fc" id="L78">                .map(Product::getId)</span>
+<span class="fc" id="L79">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getProductCategoryId(Product product) {
+<span class="fc" id="L83">        return Optional.ofNullable(product)</span>
+<span class="fc" id="L84">                .map(Product::getTopLevelCategoryId)</span>
+<span class="fc" id="L85">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getProductCategoryName(Product product) {
+<span class="fc" id="L89">        return Optional.ofNullable(product)</span>
+<span class="fc" id="L90">                .map(Product::getTopLevelCategoryName)</span>
+<span class="fc" id="L91">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getProductPrice(Product product) {
+<span class="fc" id="L95">        return Optional.ofNullable(product)</span>
+<span class="fc" id="L96">                .map(Product::getPrice)</span>
+<span class="fc" id="L97">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getProductName(Detail detail) {
+<span class="fc" id="L101">        return Optional.ofNullable(detail)</span>
+<span class="fc" id="L102">                .map(Detail::getName)</span>
+<span class="fc" id="L103">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getUpcNumber(Detail detail) {
+<span class="fc" id="L107">        return Optional.ofNullable(detail)</span>
+<span class="fc" id="L108">                .map(Detail::getUpcNumber)</span>
+<span class="fc" id="L109">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getProductVideo(Detail detail) {
+<span class="fc" id="L113">        return Optional.ofNullable(detail)</span>
+<span class="fc" id="L114">                .map(Detail::hasVideo)</span>
+<span class="fc" id="L115">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getProductReviews(Detail detail) {
+<span class="fc" id="L119">        return Optional.ofNullable(detail)</span>
+<span class="fc" id="L120">                .map(Detail::getReviewStatistics)</span>
+<span class="fc" id="L121">                .map(Object::toString);</span>
+    }
+
+    private Optional&lt;String&gt; getAvailabilityMessage(Detail detail) {
+<span class="fc" id="L125">        return Optional.ofNullable(detail)</span>
+<span class="fc" id="L126">                .map(Detail::getAvailabilityMessage)</span>
+<span class="fc" id="L127">                .map(Object::toString);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
